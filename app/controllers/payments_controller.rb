@@ -14,8 +14,7 @@ class PaymentsController < ApplicationController
   private
 
   def find_loan
-    puts params
-    puts params[:loan_id]
+    # puts params[:loan_id]
     @loan = Loan.find(params[:loan_id])
   end
 
