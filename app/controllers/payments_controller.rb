@@ -1,6 +1,16 @@
 class PaymentsController < ApplicationController
   before_action :find_loan
 
+  def index
+    @payments = @loan.payments
+    render json: @payments
+  end
+
+  def show
+    @payment = @loan.payments.find(params[:id])
+    render json: @payment
+  end
+
   def create
     @payment = @loan.payments.new(payment_params)
 
